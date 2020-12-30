@@ -11,16 +11,18 @@ date_string = today.strftime("%Y-%m-%d")
 
 
 # -------Deviations
-summary = ""
-recipients = []
-emails_string ="ECO@izimed.com;greg.groenke@izimed.com"
-expired_summary = ""
-draft_summary = ""
-
-# open DR log
+# --edit this section if there is any issues or changes
 filePath = "I:\\Quality\\Deviations\\DR Logs\\"
 workbook = xlrd.open_workbook(filePath+"Deviation Log.xlsm")
 worksheet = workbook.sheet_by_name('Master')
+emails_string ="ECO@izimed.com;greg.groenke@izimed.com"
+
+
+summary = ""
+recipients = []
+expired_summary = ""
+draft_summary = ""
+
 
 
 # reading from log  
@@ -104,8 +106,8 @@ print (summary)
 gen(emails_string, summary)
 
 
-# ------------------------------------------ECO
-# open ECO log
+# ------------------------------------------ECO-------------------------
+# edit this section for path changes
 filePath = "I:\\Quality\\ECO\\"
 workbook = xlrd.open_workbook(filePath+"ECO Log.xlsm")
 worksheet = workbook.sheet_by_name('Master')
@@ -141,15 +143,16 @@ subject = "ECO Update: " + date_string
 gen(emails_string, summary)
 
 
-# -------NCMRs
-drafting_summary = ""
-open_summary = ""
-recipients = []
-
-# open NCMR log
+# -------NCMRs----------------------------------------------------
+# edit this section only
 filePath = "I:\\Quality\\Non-Conformances\\"
 workbook = xlrd.open_workbook(filePath+"NCMR Log.xlsm")
 worksheet = workbook.sheet_by_name('Master')
+
+
+drafting_summary = ""
+open_summary = ""
+recipients = []
 
 # reading from log  
 itemTotal = worksheet.nrows 
