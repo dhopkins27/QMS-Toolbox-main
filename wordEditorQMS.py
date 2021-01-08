@@ -19,14 +19,14 @@ def docx_replace_regex(doc_obj, regex, replace):
                 
                 
 # *****************for multiple parts
-totalParts = 42
+totalParts = 27
 # ****************total number of things to change
-variables = 2
-filePath = "I:\\Quality\\ECO\\ECO by Year\\ECO 2020\\201103 - Quick Core Auto Sets\\"
+variables = 21
+filePath = "I:\\Quality\\ECO\\ECO by Year\\ECO 2021\\210104 - Parent Part Update to 01085-001 REV 00B\\"
 
 # list of parts to iterate through
-workbook = xlrd.open_workbook("I:\\R&D\\Active Programs\\54.0 Automatic\Final PN.xlsx")
-worksheet = workbook.sheet_by_name('QCASlabels')
+workbook = xlrd.open_workbook("I:\\Quality\\ECO\\ECO by Year\\ECO 2021\\210104 - Parent Part Update to 01085-001 REV 00B\ECO210104MS.xlsx")
+worksheet = workbook.sheet_by_name('Sheet1')
                               
 for i in range(0,totalParts):
     # please format part numbers in column 1 and rev levels in column 2 or udpate the index below
